@@ -1,0 +1,17 @@
+#配置服务的启动端口
+server:
+  port: 10086
+#应用的名称
+spring:
+  application:
+    name: eurekaserver
+#配置eurekaServer
+eureka:
+  server:
+    enable-self-preservation: false #关闭eurekaServer的自我保护机制
+    eviction-interval-timer-in-ms: 2000 #移除失效服务的时间 单位毫秒
+  client:
+#    register-with-eureka: false #不注册到其他的eurekaserver
+#    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:10087/eureka
